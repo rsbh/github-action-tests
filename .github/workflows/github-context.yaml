@@ -24,4 +24,6 @@ jobs:
         id: environment_name
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
-        run: echo "$GITHUB_CONTEXT"
+        run: |
+          CONTEXT=$GITHUB_CONTEXT
+          echo "$CONTEXT"
