@@ -25,5 +25,5 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
         run: |
-          CONTEXT=$GITHUB_CONTEXT | jq '.event.pusher.name'
+          CONTEXT=(echo $GITHUB_CONTEXT | jq '.event.pusher.name')
           echo "$CONTEXT"
